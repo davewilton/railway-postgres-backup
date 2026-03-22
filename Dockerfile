@@ -21,10 +21,9 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o postgres-backup .
 # Final stage
 FROM alpine:latest
 
-# Install runtime dependencies and PostgreSQL client versions 15, 16, 17
+# Install runtime dependencies and PostgreSQL client versions 16, 17
 # Note: Alpine supports multiple PostgreSQL client versions side by side
 RUN apk add --no-cache \
-    postgresql15-client \
     postgresql16-client \
     postgresql17-client \
     ca-certificates \
